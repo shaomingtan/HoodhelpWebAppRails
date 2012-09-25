@@ -1,0 +1,42 @@
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+input.error, textarea.error, select.error
+{
+	border: 1px solid red;
+	margin-bottom: 0px;
+}
+
+form
+{
+	margin-top: 20px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form_well
+{
+	padding-right: 40px;
+}
+
+div.error, span.error, p.error
+{
+	color: red;
+}
+
+.help-block.error
+{
+	margin-left:	1px;
+	margin-bottom:	10px;
+}
