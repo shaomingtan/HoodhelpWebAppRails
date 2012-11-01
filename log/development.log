@@ -62058,6 +62058,7 @@ Served asset /web_app.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 11:44:33 -0700
 Served asset /application.js - 304 Not Modified (1ms)
+<<<<<<< HEAD
 
 
 Started GET "/challenges" for 127.0.0.1 at 2012-09-25 12:32:14 -0700
@@ -62454,3 +62455,5 @@ Served asset /application.js - 304 Not Modified (1ms)
 
 Started GET "/assets/web_app.js?body=1" for 127.0.0.1 at 2012-10-31 14:39:43 -0700
 Served asset /web_app.js - 304 Not Modified (0ms)
+=======
+>>>>>>> b2941722d97f35df898be91fe2ac42f75b848679
