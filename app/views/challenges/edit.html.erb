@@ -1,0 +1,34 @@
+<%= form_for(@challenge, :html => { :class => "well form_well"} ) do |f| %>
+
+  <%= f.label :brand_name, 'Brand:' %>
+  <%= f.text_field :brand_name, :autofocus => "autofocus" %>
+
+  <%= f.label :title, 'Title:' %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description, 'Description:' %>
+  <%= f.text_area :description, :rows => "3" %>
+
+  <%= f.label :brand_logo_url, 'Brand Logo url:' %>
+  <%= f.text_area :brand_logo_url, :rows => "1" %>
+
+  <%= f.label :challenge_reward, 'Rewards:' %>
+  <%= f.text_area :challenge_reward, :rows => "1" %>
+
+  <%= f.label :challenge_location, 'Challenge Location:' %>
+  <%= f.text_area :challenge_location, :rows => "1" %>
+<hr>
+<p>Current Challenge locations</p>
+    <% @challenges.each do |challenge| %>
+      <%= challenge.challenge_location %>
+    <% end %>
+<hr>
+<p>Challenge Type:</p>
+  <%= f.label :challenge_type, 'Web' %>
+  <%= f.radio_button(:challenge_type, "Web") %>
+  
+  <%= f.label :challenge_type, 'Mobile' %>
+  <%= f.radio_button(:challenge_type, "Mobile") %>
+</br>
+  <%= f.submit "Submit", :class => "btn btn-large btn-primary" %>
+<% end %>

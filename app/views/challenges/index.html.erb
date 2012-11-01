@@ -1,0 +1,39 @@
+<div>
+	<br/>
+	<a href="<%= new_challenge_path %>">+Create New</a>
+	</br></br></br>
+	<table class="table table-bordered table-striped">
+	  	<thead>
+		  <tr>
+			<th>Brand</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Brand Logo</th>
+			<th>Rewards</th>
+			<th>Challenge Location</th>
+			<th>Challenge Type</th>
+			<th></th>
+		  </tr>
+		</thead>
+		<tbody>
+		<% @challenges.each do |challenge| %>
+		  <tr>
+			<td><%= challenge.brand_name %></td>
+			<td><%= challenge.title %></td>
+			<td><%= challenge.description %></td>
+			<td><%= challenge.brand_logo_url %></td>
+			<td><%= challenge.challenge_reward %></td>
+			<td><%= challenge.challenge_location %></td>
+			<td><%= challenge.challenge_type %></td>
+			<td width="150px" style="text-align:center">
+				<%= link_to 'Show', challenge_path(challenge.id) %>
+				&nbsp;|&nbsp;
+				<%= link_to 'Edit', edit_challenge_path(challenge.id) %>				
+				&nbsp;|&nbsp;
+				<%= link_to 'Delete', challenge_path(challenge.id), :confirm => "Are you sure?", :method => :delete %>
+			</td>
+		  </tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

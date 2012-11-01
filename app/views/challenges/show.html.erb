@@ -1,0 +1,24 @@
+<h2><%= @challenge.brand_name %> | <%= @challenge.title %></h2>
+
+<%= @challenge.description %>
+<br/><br/>
+
+<h4>Submissions (<%= @submissions.count %>)</h4>
+&nbsp;&nbsp;<a href="<%= new_challenge_submission_path(@challenge.id) %>">+Create New</a>
+<br/><br/>
+
+<div class="span5">
+<ul class="submissions">
+	<% @submissions.each do |submission| %>
+		<li class="submission">
+			<img height="100px"  src="<%= submission.content_url %>">
+			<br/>
+			<%= submission.description %>
+			<br/>
+			<%= link_to 'Show', challenge_submission_path(@challenge.id, submission.id) %>
+			&nbsp;|&nbsp;
+			<%= link_to 'Delete', challenge_submission_path(@challenge.id, submission.id), :confirm => "Are you sure?", :method => :delete %>
+		</li>
+	<% end %>
+</ul>
+</div>

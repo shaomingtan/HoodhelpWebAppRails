@@ -1,0 +1,30 @@
+<%= @challenge.brand_name %> | <%= @challenge.title %>
+<br/>
+
+<form class="well" action="https://dare-submissions-img.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="key" value="${filename}">
+  <input type="hidden" name="AWSAccessKeyId" value="AKIAJVSVARKT3MJSUHOA"> 
+  <input type="hidden" name="acl" value="public-read"> 
+  <input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjoiMjAxNS0wMS0wMVQwMDowMDowMFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJkYXJlLXN1Ym1pc3Npb25zLWltZyJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwiIl0seyJhY2wiOiJwdWJsaWMtcmVhZCJ9LFsic3RhcnRzLXdpdGgiLCIkQ29udGVudC1UeXBlIiwiIl0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCwyMDk3MTUyXV19">
+  <input type="hidden" name="signature" value="FUVg7VW+STtE+F8Eew5dhgAr6oU=">
+  <input type="hidden" name="Content-Type" value="image/jpeg">
+  <!-- Include any additional input fields here -->
+
+  File to upload to S3: 
+  <input name="file" type="file"> 
+  <br> 
+  <input type="submit" value="Upload File to S3"> 
+</form>
+
+
+<%= form_for([@challenge,@submission], :html => { :class => "well"} ) do |f| %>
+
+  <%= f.label :content_url, 'Link:' %>
+  <%= f.text_field :content_url, :autofocus => "autofocus" %>
+
+  <%= f.label :description, 'Description:' %>
+  <%= f.text_area :description, :rows => "3" %>
+
+  <%= f.hidden_field :challenge_id %>
+  <%= f.submit "Submit", :class => "btn btn-large btn-primary" %>
+<% end %>
