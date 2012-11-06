@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106091114) do
+ActiveRecord::Schema.define(:version => 20121106094614) do
 
   create_table "challenges", :force => true do |t|
     t.string   "title"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(:version => 20121106091114) do
     t.string   "brand_name"
     t.string   "brand_logo_url"
     t.string   "hero_img_url"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "challenge_type"
     t.string   "challenge_reward"
     t.string   "challenge_location"
     t.string   "brand_description"
+    t.string   "challenge_cover_photo"
   end
 
   create_table "submissions", :force => true do |t|
