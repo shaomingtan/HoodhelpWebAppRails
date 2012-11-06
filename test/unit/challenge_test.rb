@@ -13,6 +13,7 @@
 #  challenge_type     :string(255)
 #  challenge_reward   :string(255)
 #  challenge_location :string(255)
+#  brand_description  :string(255)
 #
 
 require 'test_helper'

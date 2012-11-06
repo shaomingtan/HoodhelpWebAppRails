@@ -6,6 +6,7 @@
 	  	<thead>
 		  <tr>
 			<th>Brand</th>
+			<th>Brand Description</th>
 			<th>Title</th>
 			<th>Description</th>
 			<th>Brand Logo</th>
@@ -19,6 +20,7 @@
 		<% @challenges.each do |challenge| %>
 		  <tr>
 			<td><%= challenge.brand_name %></td>
+			<td><%= challenge.brand_description %></td>
 			<td><%= challenge.title %></td>
 			<td><%= challenge.description %></td>
 			<td><%= challenge.brand_logo_url %></td>

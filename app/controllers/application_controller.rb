@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include SessionsHelper
       def render_json(json, options={})
       callback, variable = params[:callback], params[:variable]
       response = begin
