@@ -12,14 +12,16 @@ DareRails::Application.routes.draw do
 
   get "users/new"
 
-  match '/signup'  => 'users#new' 
-  root :to => "static_pages#home"
+  #match '/signup'  => 'users#new' 
   resources :challenges do
     resources :submissions
   end
   resources :users
-  match ':action' => "static_pages#:action"
 
+  root to: "static_pages#home"
+
+  match '/signup',  to: 'users#new'
+  
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'
