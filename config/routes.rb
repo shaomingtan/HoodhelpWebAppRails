@@ -12,6 +12,8 @@ DareRails::Application.routes.draw do
 
   get "users/new"
 
+  get "static_pages/aboutus"
+
   #match '/signup'  => 'users#new' 
   resources :challenges do
     resources :submissions
