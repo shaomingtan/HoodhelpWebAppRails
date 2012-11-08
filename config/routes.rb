@@ -20,8 +20,6 @@ DareRails::Application.routes.draw do
 
   root to: "static_pages#home"
 
-  match '/signup',  to: 'users#new'
-  
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'

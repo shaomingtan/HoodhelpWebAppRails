@@ -1,27 +1,18 @@
-<div>
-	<br/>
-	<table class="table table-bordered table-striped">
-	  	<thead>
-		  <tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Password Hash</th>
-			<th></th>
-		  </tr>
-		</thead>
-		<tbody>
-		<% @users.each do |user| %>
-		  <tr>
-			<td><%= user.id %></td>
-			<td><%= user.name %></td>
-			<td><%= user.email %></td>
-			<td><%= user.password_digest %></td>
-			<td width="150px" style="text-align:center">
-				<%= link_to 'Show', user_path(user.id) %>
-			</td>
-		  </tr>
-		<% end %>
-		</tbody>
-	</table>
-</div>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      	<%= gravatar_for user, size: 52 %>
+  		<%= link_to user.name, user %>
+  		<% if current_user.admin? && !current_user?(user) %>
+    		| <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
