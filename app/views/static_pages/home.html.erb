@@ -57,9 +57,10 @@
   				<div class="span6" style="margin-left:20px">
   					<h4>Tell your friends about the "Shiok for the poor cause" and Shiok will donate to San Francisco Food Bank on your behalf</h4>
   				</div>
-  				<div class="span2" align="center" style="margin-left:0px;margin-top:8px;height:36px;width:156px">
-  					<h4 id="donatechallenge1">Updateprogressbar</h4>
-  					<h4 id="donatechallenge1mechanism" onclick="sensedevice()">Donate</h4>
+  				<div class="span2" align="center" style="margin-left:0px;margin-top:0px;height:100px;width:156px">
+  					<h4 id="donatechallenge1" class="btn">Updateprogressbar</h4>
+  					<h4 id="donatechallenge1mechanism" class="btn" onclick="sensedevice()">Sensedevice</h4>
+            <a href="#myModal" role="button" class="btn" data-toggle="modal">Donate</a>
             <h4 id="donatechallenge1device">hello</h4>
   				</div>
   			</div>
@@ -77,7 +78,25 @@
   			</div>
   			<div class="span2">
   				<p3>Target: 50% to go</p3>
+
+          <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Modal header</h3>
+            </div>
+            <div class="modal-body">
+              <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+
   			</div>
+              <a id="donatechallenge1viamail" href="mailto:customer@email.com?subject=Information
+      Requested&body=Here's more information. 
+      http://www.website.com/info/info.pdf">Send More Info</a>
   			<!--progress bar-->
   				<!--Update progressbar-->
   				<!--Code for updating progress bar value-->
@@ -90,6 +109,19 @@
   					});
             function sensedevice(){
                 var isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/);
+                if (isMobile!= null)
+                  //on a mobile device so use email loop
+
+                {
+                  $('#donatechallenge1viamail').trigger('click')
+                }
+              else
+                //on a pc so use form loop
+              {
+                  $(function ()    
+                  { $("#myModal").modal();    
+                  });
+              }
                 $("#donatechallenge1device").text(isMobile);
               }
   				</script>
